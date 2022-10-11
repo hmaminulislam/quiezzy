@@ -1,24 +1,23 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
-import { QuizIdGetContext } from '../Quiz/Quiz';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Questions from '../Questions/Questions';
 
 const QuizDetails = () => {
-  const quizId = useContext(QuizIdGetContext);
-  const [quiz, setquiz] = useState([])
+const quiz = useLoaderData();
+ const {name, questions} = quiz.data;
 
- useEffect(() => {
-   const loaderData = async () => {
-     const res = await axios.get(
-       `https://openapi.programming-hero.com/api/quiz/${quizId}`
-     );
-     setquiz(res.data.data);
-   };
-   loaderData();
- }, [quizId]);
- console.log(quiz)
   return (
     <div>
-        
+      <h2 className="text-2xl font-bold text-sky-400 mt-10">Quiz of {name}</h2>
+      <div>
+        {questions &&
+          questions.map((questionDetails) => (
+            <Questions
+              key={questionDetails.id}
+              questionDetails={questionDetails}
+            ></Questions>
+          ))}
+      </div>
     </div>
   );
 };
