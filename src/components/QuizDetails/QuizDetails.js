@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Questions from '../Questions/Questions';
 
 const QuizDetails = () => {
@@ -9,6 +10,7 @@ const quiz = useLoaderData();
     <div>
       <h2 className="text-2xl font-bold text-sky-400 my-10">Quiz of {name}</h2>
       <div>
+        <ToastContainer />
         {questions &&
           questions.map((questionDetails, index) => (
             <Questions

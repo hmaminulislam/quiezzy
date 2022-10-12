@@ -1,22 +1,20 @@
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
-import { ToastContainer, toast } from "react-toastify";
+import React from 'react';
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './Questions.css';
 
 const Questions = ({ questionDetails }) => {
 
   const {correctAnswer, options, question, id} = questionDetails;
-  // const [btnSelect, setBtnSelect] = useState()
+
   const selectBtnHandle = (option) => {
     if(correctAnswer === option) {
       toast.success("Correct Answer")
-      // setBtnSelect(true)
     }
     else {
       toast.error("Wrong Answer")
-      // setBtnSelect(false)
     }
   };
   const eyeBtnHandle = () => {
@@ -32,7 +30,6 @@ const Questions = ({ questionDetails }) => {
           className="text-sky-600 cursor-pointer"
           icon={faEye}
         ></FontAwesomeIcon>
-        <ToastContainer />
       </div>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
         {options.map((option, index) => (
@@ -51,7 +48,6 @@ const Questions = ({ questionDetails }) => {
               />
               {option}
             </label>
-            <ToastContainer />
           </div>
         ))}
       </div>
