@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, useRouteError } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
-    const error = useRouteError()
     return (
       <div className="mt-20">
         <h2 className="text-6xl font-bold text-red-600">404</h2>
