@@ -27,11 +27,18 @@ const Questions = ({ questionDetails }) => {
     <div className="mb-16 bg-gray-100 border border-gray-200 w-[750px] mx-auto p-10">
       <div className="flex items-start justify-between">
         <p className="text-xl text-sky-600 py-5">{question}</p>
-        <FontAwesomeIcon onClick={eyeBtnHandle} className='text-sky-600 cursor-pointer' icon={faEye}></FontAwesomeIcon>
+        <FontAwesomeIcon
+          onClick={eyeBtnHandle}
+          className="text-sky-600 cursor-pointer"
+          icon={faEye}
+        ></FontAwesomeIcon>
       </div>
       <div className="grid grid-cols-2 gap-3">
-        {options.map((option) => (
-          <div className="bg-sky-200 rounded-md text-gray-500 font-bold h-24 py-2 flex items-center text-left pl-4 quiz-question-option">
+        {options.map((option, index) => (
+          <div
+            key={index}
+            className="bg-sky-200 rounded-md text-gray-500 font-bold h-24 py-2 flex items-center text-left pl-4 quiz-question-option"
+          >
             <label onChange={() => selectBtnHandle(option)} htmlFor={id}>
               <ToastContainer />
               <input className="mr-3" type="radio" name={id} id={id} />
