@@ -2,13 +2,13 @@ import React from "react";
 import './Statistics.css';
 import { useLoaderData } from "react-router-dom";
 import {
-  BarChart, 
-  Bar,
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
+  AreaChart,
+  CartesianGrid,
+  Area,
 } from "recharts";
 
 const Statistics = () => {
@@ -16,14 +16,31 @@ const Statistics = () => {
   const data = quiz.data;
   return (
     <div className="chart-container">
-      <h2 className="text-5xl font-bold text-sky-400 mt-10 mb-5">Quiz Chart</h2>
-      <BarChart width={400} height={400} data={data}>
-        <Bar dataKey="total" fill="#8884d8" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-      </BarChart>
+      <h3 className="text-4xl text-sky-400 text-semibold mt-14 mb-10">Quiz Chart</h3>
+      <div style={{ width: "100%", height: 300 }}>
+        <ResponsiveContainer>
+          <AreaChart
+            data={data}
+            margin={{
+              top: 10,
+              right: 30,
+              left: 0,
+              bottom: 0,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="total"
+              stroke="#8884d8"
+              fill="#8884d8"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

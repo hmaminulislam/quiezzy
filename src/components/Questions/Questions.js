@@ -24,7 +24,7 @@ const Questions = ({ questionDetails }) => {
   }
 
   return (
-    <div className="mb-16 bg-gray-100 border border-gray-200 w-[750px] mx-auto p-10">
+    <div className="mb-16 bg-gray-100 border border-gray-200 mx-auto p-10 option-container">
       <div className="flex items-start justify-between">
         <p className="text-xl text-sky-600 py-5">{question}</p>
         <FontAwesomeIcon
@@ -32,18 +32,26 @@ const Questions = ({ questionDetails }) => {
           className="text-sky-600 cursor-pointer"
           icon={faEye}
         ></FontAwesomeIcon>
+        <ToastContainer />
       </div>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
         {options.map((option, index) => (
-          <div
-            key={index}
-            className="bg-sky-200 rounded-md text-gray-500 font-bold h-24 py-2 flex items-center text-left pl-4 quiz-question-option"
-          >
-            <label onChange={() => selectBtnHandle(option)} htmlFor={id}>
-              <ToastContainer />
-              <input className="mr-3" type="radio" name={id} id={id} />
+          <div key={index}>
+            <label
+              onChange={() => selectBtnHandle(option)}
+              key={id}
+              className="bg-teal-200 hover:bg-teal-300 rounded-md text-gray-500 font-bold h-24 py-2 flex items-center text-left pl-4 quiz-question-option cursor-pointer"
+            >
+              <input
+                className="mr-3"
+                type="radio"
+                value={id}
+                name="qu"
+                key={id}
+              />
               {option}
             </label>
+            <ToastContainer />
           </div>
         ))}
       </div>

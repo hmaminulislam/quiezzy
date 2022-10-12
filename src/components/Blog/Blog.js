@@ -4,11 +4,10 @@ import './Blog.css'
 const Blog = () => {
     return (
       <div className="my-20">
-        <h2 className="text-5xl text-sky-500 font-semibold mb-4">Blog</h2>
         <h3 className="text-3xl text-gray-500 text-semibold">
           Question and Answer
         </h3>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 px-20">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 md:px-20 px-5 sm:px-10">
           <div className="mt-12 bg-gray-200 p-10">
             <p className="text-lg text-sky-700 mb-5">
               What is the purpose of react-router?
