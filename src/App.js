@@ -4,7 +4,6 @@ import Blog from './components/Blog/Blog';
 import Home from './components/Home/Home';
 import QuizDetails from './components/QuizDetails/QuizDetails';
 import Main from './layout/Main';
-import loaderQuizData from './loaders/loaders';
 
 
 function App() {
