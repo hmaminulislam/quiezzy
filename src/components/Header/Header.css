@@ -4,3 +4,10 @@
     background-position: center;
     position: relative;
 }
+
+@media screen and (max-width: 576px) {
+    .header-container {
+        height: 80vh;
+        padding: 0 10px;
+    }
+}

@@ -8,7 +8,7 @@ const Blog = () => {
         <h3 className="text-3xl text-gray-500 text-semibold">
           Question and Answer
         </h3>
-        <div className="grid md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-10 px-20">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 px-20">
           <div className="mt-12 bg-gray-200 p-10">
             <p className="text-lg text-sky-700 mb-5">
               What is the purpose of react-router?

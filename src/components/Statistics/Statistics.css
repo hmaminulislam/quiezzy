@@ -1,8 +1,5 @@
 .chart-container {
-    max-width: 550px;
+    max-width: 500px;
+    max-height: 400px;
     margin: 0 auto;
 }
-/* .chart-bar {
-    width: 100%;
-    height: 100%;
-} */

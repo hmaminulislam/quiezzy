@@ -8,7 +8,7 @@ const Quiz = () => {
     
     return (
         <div>
-          <div className="grid grid-cols-4 gap-5 px-20 my-20">
+          <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5 md:px-20 px-5 my-20">
             {quizes.map((quiz) => (
               <QuizItem
                 quiz={quiz}

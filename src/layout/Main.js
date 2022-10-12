@@ -3,7 +3,6 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 
 export const QuizContext = createContext();
-export const QuizIdSetContext = createContext();
 
 const Main = () => {
   const quizes = useLoaderData();
