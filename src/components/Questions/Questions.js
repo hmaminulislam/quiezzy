@@ -3,21 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import QuestionOption from '../QuestionOption/QuestionOption';
 import './Questions.css';
 
 const Questions = ({ questionDetails }) => {
 
   const {correctAnswer, options, question, id} = questionDetails;
-  const [btnSelect, setBtnSelect] = useState()
+  // const [btnSelect, setBtnSelect] = useState()
   const selectBtnHandle = (option) => {
     if(correctAnswer === option) {
       toast.success("Correct Answer")
-      setBtnSelect(true)
+      // setBtnSelect(true)
     }
     else {
       toast.error("Wrong Answer")
-      setBtnSelect(false)
+      // setBtnSelect(false)
     }
   };
   const eyeBtnHandle = () => {
