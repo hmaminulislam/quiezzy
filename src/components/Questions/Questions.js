@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import QuestionOption from '../QuestionOption/QuestionOption';
 import './Questions.css';
 
@@ -8,9 +10,11 @@ const Questions = ({ questionDetails }) => {
   const [btnSelect, setBtnSelect] = useState()
   const selectBtnHandle = (option) => {
     if(correctAnswer === option) {
+      toast.success("Correct Answer")
       setBtnSelect(true)
     }
     else {
+      toast.error("Wrong Answer")
       setBtnSelect(false)
     }
   };
@@ -21,7 +25,8 @@ const Questions = ({ questionDetails }) => {
       <div className="grid grid-cols-2 mx-auto w-[750px] gap-3">
         {options.map((option) => (
           <div className="bg-sky-200 rounded-md text-gray-500 font-bold h-24 py-2 flex items-center text-left pl-4 quiz-question-option">
-            <label onChange={()=> selectBtnHandle(option)} htmlFor={id}>
+            <label onChange={() => selectBtnHandle(option)} htmlFor={id}>
+              <ToastContainer />
               <input className="mr-3" type="radio" name={id} id={id} />
               {option}
             </label>
