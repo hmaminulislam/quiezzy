@@ -1,3 +1,5 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { QuizIdSetContext } from '../../layout/Main';
@@ -13,6 +15,7 @@ const QuizItem = ({quiz}) => {
                 <p className='text-sky-400 font-bold'>Quiz: {total}</p>
                 <Link to={`quiz/${id}`} onClick={() => quizBtnHandle(id)} className='bg-sky-400 text-white font-semibold py-2 px-4 rounded-sm'>
                     Start Practice
+                    <FontAwesomeIcon className='ml-2' icon={faArrowRight}></FontAwesomeIcon>
                 </Link>
             </div>
         </div>

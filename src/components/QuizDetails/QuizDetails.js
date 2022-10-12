@@ -8,7 +8,7 @@ const quiz = useLoaderData();
   // console.log(questions)
   return (
     <div>
-      <h2 className="text-2xl font-bold text-sky-400 mt-10">Quiz of {name}</h2>
+      <h2 className="text-2xl font-bold text-sky-400 my-10">Quiz of {name}</h2>
       <div>
         {questions &&
           questions.map((questionDetails) => (

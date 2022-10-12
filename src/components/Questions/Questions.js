@@ -1,3 +1,5 @@
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,11 +20,17 @@ const Questions = ({ questionDetails }) => {
       setBtnSelect(false)
     }
   };
-  console.log(btnSelect)
+  const eyeBtnHandle = () => {
+    toast.info(correctAnswer)
+  }
+
   return (
-    <div className="mb-16">
-      <p className="text-xl text-sky-600 w-[500px] mx-auto py-5">{question}</p>
-      <div className="grid grid-cols-2 mx-auto w-[750px] gap-3">
+    <div className="mb-16 bg-gray-100 border border-gray-200 w-[750px] mx-auto p-10">
+      <div className="flex items-start justify-between">
+        <p className="text-xl text-sky-600 py-5">{question}</p>
+        <FontAwesomeIcon onClick={eyeBtnHandle} className='text-sky-600 cursor-pointer' icon={faEye}></FontAwesomeIcon>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
         {options.map((option) => (
           <div className="bg-sky-200 rounded-md text-gray-500 font-bold h-24 py-2 flex items-center text-left pl-4 quiz-question-option">
             <label onChange={() => selectBtnHandle(option)} htmlFor={id}>
